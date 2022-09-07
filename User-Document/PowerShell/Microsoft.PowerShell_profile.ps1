@@ -1,6 +1,7 @@
 cls
 New-Alias g goto
 New-Alias fileman explorer
+New-Alias curl curl.exe
 
 function goto {
     param (
@@ -24,4 +25,6 @@ function goto {
 }
 
 $ENV:STARSHIP_CONFIG = "$HOME/.starship/starship.toml"
+$ENV:STARSHIP_DISTRO = "  $env:username "
+Import-Module -Name Terminal-Icons
 Invoke-Expression (&starship init powershell)
